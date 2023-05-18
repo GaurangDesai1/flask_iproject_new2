@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Thesis List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body class="dynamic-bg">
+    <!-- Top Navigation Bar -->
+    <div class="topnav">
+        <a href="#"><span class="icon icon-home"></span>Home</a>
+        <a href="#footer" class="icon icon-settings">About Us</a>
+        <a href="#"><span class="icon icon-settings"></span>Settings</a>
+        <div class="search-bar">
+            <input type="text" placeholder="Search Thesis Titles">
+        </div>
+    </div>
+
+    <h1>Thesis List</h1>
+<div class="container-wrapper">
+    <div class="container-left">
+        {% for thesis in theses %}
+            <div class="thesis-container" id="{{ thesis.id }}">
+                <div class="thesis-title">{{ thesis.title }}</div>
+                <div class="subchapter">{{ thesis.subchapter }}</div>
+                <a class="download-button" href="/THESIS/{{ thesis.id }}">View Content</a>
+            </div>
+        {% endfor %}
+    </div>
+    
+    <div class="container-right">
+        <div class="description-box">
+            <h2>About the Website</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac erat vel ipsum facilisis sodales. Sed nec augue quislacus consectetur suscipit eu id ante. Sed non odio quis ligula volutpat facilisis vel a ipsum. Proin pharetra convallis enim, sed rutrum nisi eleifend non.</p>
+        </div>
+    </div>
+    </div>
+
+      <!-- Footer Section -->
+    <footer id="footer">
+        <div class="contact-details">
+        <h3>Contact</h3>
+        <p>Email: example@example.com</p>
+        <p>Phone: +1234567890</p>
+        </div>
+        <div class="about-us-details">
+        <h3>About Us</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae magna sed purus bibendum pharetra. Fusce sit amet ante purus.</p>
+        </div>
+    </footer>
+
+    <!-- Include the necessary icon images -->
+    <!-- Replace the URLs with the actual image URLs -->
+        <script>
+            var iconHome = new Image();
+            iconHome.src = "https://png.pngtree.com/element_our/20190601/ourmid/pngtree-grey-house-icon-free-illustration-image_1338597.jpg";
+
+            var iconSearch = new Image();
+            iconSearch.src = "https://www.clipartmax.com/png/middle/161-1616455_search-search-icon-grey.png";
+
+            var iconSettings = new Image();
+            iconSettings.src = "https://www.clipartmax.com/png/small/104-1041280_small-grey-gear-clip-art-grey-gear-png.png";
+
+            // Search functionality
+            var searchInput = document.querySelector('.search-bar input[type="text"]');
+            var thesisContainers = document.querySelectorAll('.thesis-container');
+            var searchResults = document.createElement('div');
+            searchResults.className = 'search-results';
+            document.body.insertBefore(searchResults, document.body.firstChild);
+
+            function performSearch() {
+                var searchTerm = searchInput.value.toLowerCase();
+                var count = 0;
+
+                if (searchTerm) {
+                    for (var i = 0; i < thesisContainers.length; i++) {
+                        var title = thesisContainers[i].querySelector('.thesis-title').textContent.toLowerCase();
+
+                        if (title.includes(searchTerm)) {
+                            thesisContainers[i].style.display = 'block';
+                            count++;
+                        } else {
+                            thesisContainers[i].style.display = 'none';
+                        }
+                    }
+
+                    searchResults.textContent = count + (count === 1 ? ' result' : ' results') + ' found';
+                } else {
+                    for (var i = 0; i < thesisContainers.length; i++) {
+                        thesisContainers[i].style.display = 'block';
+                    }
+
+                    searchResults.textContent = '';
+                }
+            }
+
+            searchInput.addEventListener('input', performSearch);
+            searchInput.addEventListener('keyup', function(event) {
+                if (event.key === 'Enter') {
+                    performSearch();
+            }
+            });
+            window.addEventListener('scroll', function() {
+                var scrollPosition = window.scrollY;
+                var body = document.querySelector('body');
+
+                if (scrollPosition > 0) {
+                    body.classList.add('dynamic-bg');
+                } else {
+                    body.classList.remove('dynamic-bg');
+                }
+            });
+
+        </script>
+
+</body>
+</html>

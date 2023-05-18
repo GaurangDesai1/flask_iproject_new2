@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Thesis Content</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="topnav">
+        <a href="#"><span class="icon icon-home"></span>Home</a>
+        <a href="#footer" class="icon icon-settings">About Us</a>
+        <a href="#"><span class="icon icon-settings"></span>Settings</a>
+        <div class="search-bar">
+          <input type="text" placeholder="Search Thesis Titles">
+        </div>
+    </nav>
+
+    <h1>{{ thesis.title }}</h1>
+    <h2>{{ thesis.subchapter }}</h2>
+    <a href="{{ url_for('static', filename='THESIS/' + thesis.id + '/Introduction.docx') }}" download>Introduction</a>
+    <a href="{{ url_for('static', filename='THESIS/' + thesis.id + '/Literature_Review.docx') }}" download>Literature review</a>
+    <a href="{{ url_for('static', filename='THESIS/' + thesis.id + '/Theoretical_Analysis.docx') }}" download>Theoretical Analysis</a>
+    <a href="{{ url_for('static', filename='THESIS/' + thesis.id + '/Methodology.docx') }}" download>Methodology</a>
+    <a href="{{ url_for('static', filename='THESIS/' + thesis.id + '/Data_Analysis.docx') }}" download>Data Analysis</a>
+    <a href="{{ url_for('static', filename='THESIS/' + thesis.id + '/Conclusion.docx') }}" download>Conclusion</a>
+    <!-- Add more download links for each chapter -->
+</body>
+</html>

@@ -1,0 +1,246 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #4B0082;
+}
+
+.container-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container-left {
+    width: 70%;
+}
+
+.container-right {
+    width: 25%;
+}
+
+/* Top Navigation Bar */
+.topnav {
+  background-color: transparent;
+  overflow: hidden;
+  position: relative;
+}
+
+.topnav a {
+  color: #000000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.topnav::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ccc;
+}
+
+.topnav .logo {
+    float: left;
+    margin-right: 20px;
+}
+
+.topnav .logo img {
+    height: 30px;
+    vertical-align: middle;
+}
+
+.topnav .menu {
+    float: left;
+}
+
+.topnav .menu a {
+    color: #fff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.topnav .menu a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.topnav .search-bar {
+    float: right;
+}
+
+.topnav .search-bar input[type="text"] {
+    width: 260px;
+    height: 30px;
+    border: none;
+    background-color: #f2f2f2;
+    padding: 5px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+
+/* Rounded Container Box */
+.thesis-container {
+    background-color: #F8F8FF;
+    margin-bottom: 20px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    height: 175px; /* Adjust the height as desired */
+    width: 70%;
+}
+
+.thesis-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.subchapter {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+
+.download-button {
+    display: block;
+    background-color: #8A2BE2;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.download-button:hover {
+    background-color: #6A1E9A;
+}
+
+/* Description Box */
+.description-box {
+    background-color: #F8F8FF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 90%; /* Set the width to 50% to cover the right-hand half */
+   
+    float: right; /* Float the box to the right /
+box-sizing: border-box; / Include padding and border in the width calculation */
+}
+
+.dynamic-bg {
+background-color: #E6E6FA;
+transition: background-color 0.5s ease;
+}
+
+.search-results {
+text-align: center;
+margin-top: 20px;
+color: #4B0082;
+}
+
+/* Footer Section */
+#footer {
+  background-color: #f2f2f2;
+  padding: 20px;
+  text-align: center;
+}
+
+.contact-details, .about-us-details {
+  margin-bottom: 20px;
+}
+
+.contact-details h3, .about-us-details h3 {
+  margin-bottom: 10px;
+}
+
+/* Smooth scrolling animation */
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* Top Navigation Bar */
+nav {
+    background-color: transparent;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  nav a {
+    color: #000000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  nav::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ccc;
+  }
+  
+  nav .logo {
+    float: left;
+    margin-right: 20px;
+  }
+  
+  nav .logo img {
+    height: 30px;
+    vertical-align: middle;
+  }
+  
+  nav .menu {
+    float: left;
+  }
+  
+  nav .menu a {
+    color: #fff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background-color 0.3s;
+  }
+  
+  nav .menu a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  nav .search-bar {
+    float: right;
+  }
+  
+  nav .search-bar input[type="text"] {
+    width: 260px;
+    height: 30px;
+    border: none;
+    background-color: #f2f2f2;
+    padding: 5px;
+    border-radius: 15px;
+    text-align: center;
+  }
+  
